@@ -1,0 +1,28 @@
+{
+    "name": "ssnukala/ufsprinkle-botman",
+    "type": "userfrosting-sprinkle",
+    "description": "BotMan Sprinkle module for UserFrosting.",
+    "keywords": ["php user management", "usercake", "bootstrap","botman"],
+    "homepage": "https://github.com/ssnukala/ufsprinkle-botman",
+    "license" : "MIT",
+    "authors" : [
+        {
+            "name": "Srinivas Nukala",
+            "homepage": "http://srinivasnukala.com"
+        }
+    ],
+    "version": "4.0.0",
+    "require": {
+        "php": ">=5.6",
+        "botman/botman":"2.0",
+        "botman/driver-web":"*"
+    },
+    "autoload": {
+        "psr-4": {
+            "UserFrosting\\Sprinkle\\BotMan\\": "src/"
+        }
+    },
+    "extra": {
+        "installer-name": "BotMan"
+    }
+}

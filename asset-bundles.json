@@ -1,0 +1,16 @@
+{
+    "bundle": {
+        "js/pages/botmanutil": {
+            "scripts": [
+                "local/js/pages/botman-utilities.js"
+            ],
+            "options": {
+                "result": {
+                    "type": {
+                        "scripts": "plain"
+                    }
+                }
+            }
+        }
+    }
+}

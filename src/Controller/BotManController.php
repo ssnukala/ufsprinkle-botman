@@ -29,6 +29,28 @@ class BotManController extends SimpleController
 {
     protected $botman;
     protected $config;
+
+    /**
+     * [pageChat Opens chat box]
+     * @param  [type] $request  request object
+     * @param  [type] $response response object
+     * @param  [type] $args     input arguements
+     * @return [void]           void
+     */
+    public function pageChat($request, $response, $args)
+    {
+        $this->setupBotMan();
+        // Create BotMan instance
+        return $this->ci->view->render($response, "pages/botman-iframe.html.twig", [
+            'info' => [
+                'environment' => $this->ci->environment,
+                'path' => [
+                    'project' => \UserFrosting\ROOT_DIR
+                ]
+            ]
+        ]);
+    }
+
     /**
      * [setupBotMan setup the BotMan widget]
      * @return [type] [void]
@@ -74,27 +96,6 @@ class BotManController extends SimpleController
         });
         // Start listening
         $this->botman->listen();
-    }
-
-    /**
-     * [pageChat Opens chat box]
-     * @param  [type] $request  request object
-     * @param  [type] $response response object
-     * @param  [type] $args     input arguements
-     * @return [void]           void
-     */
-    public function pageChat($request, $response, $args)
-    {
-        $this->setupBotMan();
-        // Create BotMan instance
-        return $this->ci->view->render($response, "pages/botman-iframe.html.twig", [
-            'info' => [
-                'environment' => $this->ci->environment,
-                'path' => [
-                    'project' => \UserFrosting\ROOT_DIR
-                ]
-            ]
-        ]);
     }
 
     /**
